@@ -18,8 +18,8 @@ INSERT INTO table_name (column1, column2, ...) VALUES (column1, column2, ...);
 For example 
 
 ```sql
-INSERT INTO students (name, regNO, idNO, course) 
-VALUES ('Doe', 'sc212/0055/2021', '12345678', 'software engineering');
+INSERT INTO students (name, regNO, idNO, course, age) 
+VALUES ('Doe', 'sc212/0055/2021', 12345678, 'software engineering', 23);
 ```
 
 In the above example, we inserted a single row into the table.
@@ -37,10 +37,10 @@ VALUES (values1, value2, ...),
 For example
 
 ```sql
-INSERT INTO students (name, regNO, idNO, course)
-VALUES ('Doe', 'sc212/0055/2021', '12345678', 'software engineering'),
-       ('John', 'sc200/0444/2022', '45342334', 'computer science'),
-       ('Ann', 'sc211/03433/2023', '23457698', 'IT');
+INSERT INTO students (name, regNO, idNO, course, age)
+VALUES ('Doe', 'sc212/0055/2021', 12345678, 'software engineering', 21),
+       ('John', 'sc200/0444/2022', 45342334, 'computer science', 24),
+       ('Ann', 'sc211/03433/2023', 23457698, 'IT', 22);
 ```
 
 # PostgreSQL UPDATE
@@ -68,7 +68,7 @@ UPDATE table_name SET column1_name = value, column2_name = value WHERE filter;
 For example.
 
 ```sql
-UPDATE students SET regNO = 'sc212/1234/2022', idNo = '90876543' WHERE name = 'Doe';
+UPDATE students SET regNO = 'sc212/1234/2022', idNo = 90876543 WHERE name = 'Doe';
 ```
 
 # PostgreSQL DELETE
