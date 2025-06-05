@@ -5,7 +5,7 @@ To insert data into a table in PostgreSQL, we use the INSERT INTO statement.
 Lets create a  working table.
 
 ```sql
-CREATE TABLE students (name VARCHAR(150) , regNO VARCHAR(50), idNO INT(8), course VARCHAR(150), age INT(3));
+CREATE TABLE students (name VARCHAR(150) , regNO VARCHAR(50), idNO INT, course VARCHAR(150), age INT);
 ```
 
 ## Inserting a single row
