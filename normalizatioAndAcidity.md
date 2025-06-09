@@ -70,24 +70,23 @@ In the above table there is a transitive depedency where the department depends 
 ## ACID properties
 Acid stands for:
 
--A = Atomicity: it means that either the entire transaction completes fully or doesn't execute at all.
+- A = Atomicity: it means that either the entire transaction completes fully or doesn't execute at all.
 
 for example: 
-
 When transfering money from account A to account B. When the trascation is being executed but after reducing the amount in account A it fails before updating the balance in account B. In this case the entire transaction is rolled back and no partial changes are made in the database in this case, no changes will be made to account A since the tranctaction failed.
 
--C = Consistency: ensures that a database remains in a valid state before and after a transaction.
+- C = Consistency: ensures that a database remains in a valid state before and after a transaction.
 
+For example:
+When transfering money from Account A which has a balance of ksh 700 to account B and the tranfer fails mid-way, the system should role back and not update any balances. So if if there was a deduction in Account A then the tranfer fails after rolling back the balance of account A should be ksh 700.
 
-When transfering money froma Account A which has a balance of ksh 700 to account B and the tranfer fails mid-way, the system should role back and not update any balances. So if if there was a deduction in Account A then the tranfer fails after rolling back the balance of account A should be ksh 700.
+- I = Isolation: ensures that multiple transactions can occur concurrently and independently without interference.
+For example:
+If there are two tranfers from account A the final balance should be as if all the trafers occured one after another.
 
--I = Isolation: ensures that multiple transactions can occur concurrently and independenrly without interference.
-
-
--D = Durability: ensures that once the transaction has completed execution, the updates and modifications to the database are stored in and written to disk and they persist even if a system failure occurs.
+- D = Durability: ensures that once the transaction has completed execution, the updates and modifications to the database are stored in and written to disk and they persist even if a system failure occurs.
 
 for example:
-
 After updating the balance in account B and the system crashes immediately, the transfer details will still be intact when the system recovers
 
 
